@@ -74,10 +74,10 @@ You can try out the live demo of the **BookMyShow Clone** by following the link 
 Here are a few screenshots of the **BookMyShow Clone** in action:
 
 1. **Homepage**
-   ![Homepage Screenshot](link-to-homepage-screenshot)
+   ![Homepage Screenshot](https://github.com/ThiruvidhiRevanth/Book-My-Show-Clone/blob/main/img/homescreen.png?raw=true)
 
 2. **Movie Listings**
-   ![Movie Listings Screenshot](link-to-movie-listings-screenshot)
+   ![Movie Listings Screenshot]()
 
 3. **Booking Page**
    ![Booking Page Screenshot](link-to-booking-page-screenshot)
