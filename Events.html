@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>BookMyShow</title>
+    <link rel="icon" type="image/x-icon" href="img/fav.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Javascript -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+
+            <nav class="sidenavbar">
+                <h1>Hey!</h1>
+            </nav>
+
+            <nav class="sidesubnavbar" id="signin-btn"  onclick="document.getElementById('id01').style.display='block'">
+                <img src="img/rewards.webp">
+                <p>Unlock special offers & great benifits</p>
+                <button class="login"  onclick="document.getElementById('id01').style.display='block'">Login / Register</button>
+               
+            </nav>
+
+            <div id="profile-container" style="display: none;padding: 10px;">
+                <img id="profile-pic" src="img/default-profile.png" alt="Profile" 
+                    style="width: 50px; height: 50px; border-radius: 50%;">
+                    <p id="profile-name" style="float:right;padding-right: 150px;padding-top: 20px;"></p>
+
+            </div>
+            
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="notifications-outline"></ion-icon>
+                </div>
+                <div class="text">Notifications</div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+            <a class="btn-disabled" href="#">
+                <div class="lefticon">
+                    <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+                <div class="text">Purchase History<br>
+                    <div class="subtext">View all your bookings & Purchases</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </div>
+            </a>
+            <a class="btn-disabled" href="#">
+                <div class="lefticon">
+                    <ion-icon name="tv-outline"></ion-icon>
+                </div>
+                <div class="text">Stream Library<br>
+                    <div class="subtext">Rented & Purchased Movies</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </div>
+            </a>
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                </div>
+                <div class="text">Help & Support<br>
+                    <div class="subtext">View commonly asked queries and Chat</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+            <a class="btn-disabled" href="#">
+                <div class="lefticon">
+                    <ion-icon name="settings-outline"></ion-icon>
+                </div>
+                <div class="text">Accounts & Settings<br>
+                    <div class="subtext">Location, Payments, Addresses & More</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </div>
+            </a>
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="gift-outline"></ion-icon>
+                </div>
+                <div class="text">Rewards<br>
+                    <div class="subtext">View your rewards & unlock new ones</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
+                <div class="text">BookASmile</div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+            <a href="#" style="display: none;padding: 10px;" id ="singout" onclick="signOut()">
+                <div class="lefticon">
+                    <img src="img/logout.svg">
+                </div>
+                <div class="text" style="padding-top: 15px;">LogOut</div>
+                
+            </a>
+            
+
+        </nav>
+        <!-- End sidebar -->
+
+        <!-- Dark overlay -->
+        <div class="overlay"></div>
+
+        <!-- Content -->
+        <div class="content">
+
+            <nav class="navbar">
+                <img src="img/logo.png" class="brand-logo" alt="" />
+                <div class='input'>
+                    <ion-icon name="search"></ion-icon>
+                    <input className='search'
+                        placeholder='Search for Movies, Events, Plays, Sports, and Activities'></input>
+                </div>
+                <div class="right-container"></div>
+                    <a href="#" class="location">Tirupati<ion-icon name="caret-down-sharp"></ion-icon></a>
+                   
+                    <button class="signin" id="signin-btn1" 
+    onclick="document.getElementById('id01').style.display='block'">Signin</button>
+
+<!-- Profile container (initially hidden) -->
+<div id="profile-container1" style="display: none;">
+    <img id="profile-pic1" src="img/default-profile.png" alt="Profile" 
+        style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
+                    <div id="id01" class="modal">
+
+                        <div class="modal-content">
+                            <div class="getstart">
+                                <h3>Get Started</h3>
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close" id="close"
+                                    title="Close Modal">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </span>
+                            </div>
+
+                            <div class="container">
+                                <a href="#" id="google-login" class="button">
+                                    <div class="logo">
+                                        <img src="img/googlelogo.svg">
+                                    </div>
+                                    <div class="text">Continue with Google</div>
+                                </a>
+                             
+                               
+                                
+                            </div>
+                            <h2>OR</h2>
+
+                            <div class="inputs">
+                                <img alt="email" src="img/mail.svg">
+                                
+                                <input type="email"
+                                name="email"
+                                id="email"
+                                    placeholder="Enter your Email" class="mobileNo">
+                            </div>
+                            <div class="inputs">
+                                <img alt="logo" src="img/password.svg">
+                                
+                                <input  type="password"
+                                name="password"
+                                id="password"
+                                    placeholder="Enter your Password" class="mobileNo">
+                            </div>
+                            <div class="container" style="width: 220px;">
+                                <a href="#"  onclick="signIn()">
+                                    
+                                   
+                                    <div class="text">SignIn</div>
+                                </a>
+                                
+                            </div><br>
+                            
+                              
+                            <p>Not have An Account? <a  style="text-decoration: none;" href="#" onclick="showSignUp()">SignUp</a></p>
+
+                            
+
+
+                            <p1>I agree to the <u>Terms & Conditions</u>&<u>Privacy Policy</u></p1>
+
+                        </div>
+
+                    </div>
+                    <div id="ido2" class="modal" style="display:none;">
+                        <div class="modal-content">
+                            <div class="getstart">
+                                <h3>Create an Account</h3>
+                                <span onclick="document.getElementById('ido2').style.display='none'" class="close" title="Close Modal">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </span>
+                            </div>
+                            
+                            <div class="container">
+                                <a href="" id="google-login1" class="button">
+                                    <div class="logo">
+                                        <img src="img/googlelogo.svg">
+                                    </div>
+                                    <div class="text">Continue with Google</div>
+                                </a>
+                               
+                                
+                            </div>
+                            <h2>OR</h2>
+
+                            <div class="inputs">
+                                <img alt="logo" src="img/mail.svg">
+                                
+                                <input type="email"
+                                name="email1"
+                                id="email1"
+                                    placeholder="Enter your Email" class="mobileNo">
+                            </div>
+                            <div class="inputs">
+                                <img alt="logo" src="img/password.svg">
+                                
+                                <input 
+                                type="password"
+                                name="password1"
+                                id="password1"
+                                    placeholder="Enter your Password" >
+                                   
+                            </div>
+                            <div class="inputs">
+                                <img alt="logo" src="img/password.svg">
+                                
+                                <input  type="password2"
+                                name="password2"
+                                id="password2"
+                                    placeholder="Confirm your Password" >
+                                   
+                            </div>
+                            <div class="container" style="width: 220px;">
+                                <a  herf="#" onclick="signUp()"  class="button">
+                                   
+                                    <div class="text">SignUp</div>
+                                </a>
+                               
+                                
+                            </div>
+                            
+                            
+                            <br>
+                            <p>Already have an Account? <a style="text-decoration: none;" href="#" onclick="showSignIn()">SignIn</a></p>
+
+                            
+
+
+                            <p1>I agree to the <u>Terms & Conditions</u>&<u>Privacy Policy</u></p1>
+
+                        </div>
+                    </div>
+                   
+
+                    <a href="#" class="btn-customized open-menu">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </a>
+                </div>
+            </nav>
+
+            <nav class="subnavbar">
+                <ul class='navitem'>
+                    <li><a href='index.html'>Home</a></li>
+                    <li2><a href=''>Movies</a></li2>
+                    <li><a href='Stream.html'>Stream</a></li>
+                    <li><a href='Events.html'>Events</a></li>
+                    <li><a href='Plays.html'>Plays</a></li>
+                    <li><a href='Sports.html'>Sports</a></li>
+                    <li><a href='Activities.html'>Activities</a></li>
+                    <li><a href='Buzz.html'>Buzz</a></li>
+                </ul>
+                <ul class='navitem1'>
+                    <li><a href='List.html'>ListYourShow</a></li>
+                    <li><a href='Corporates.html'>Corporates</a></li>
+                    <li><a href='Offers.html'>Offers</a></li>
+                    <li><a href='Gift.html'>Gift Cards</a></li>
+                </ul>
+            </nav>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    
+                </div>
+            </div>
+
+            <script src="js/data.js"></script>
+            <script src="js/app.js"></script>
+            <script src="js/auth.js"></script>
+            <script type="module" src="js/signWithGoogle.js"></script>
+          
+
+
+            <h1 class="title">Events</h1>
+            <div class="movies-list">
+                <div class="card-container" id="telugu-card-container"></div>
+            </div>
+            
+           
+              
+            <script>
+                function fetchMovies(url, containerId) {
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(data => {
+                            const cardContainer = document.getElementById(containerId);
+                            data.forEach(movie => {
+                                // Encode the cast and crew data into the URL-friendly format
+                                const cast = movie.cast.map(actor => 
+                                    `${encodeURIComponent(actor.name)} (${encodeURIComponent(actor.role)}) [${encodeURIComponent(actor.image)}]`
+                                ).join(',');
+                                const crew = movie.crew.map(member => 
+                                    `${encodeURIComponent(member.name)} (${encodeURIComponent(member.role)}) [${encodeURIComponent(member.image)}]`
+                                ).join(',');
+            
+                                // Create movie card div
+                                const movieCard = document.createElement('div');
+                                movieCard.classList.add('movie');
+            
+                                // Use template literals to generate the movie card with clickable link
+                                movieCard.innerHTML = `
+                                    <a style="text-decoration: none;" 
+                                       href="click.html?title=${encodeURIComponent(movie.title)}&xd=${encodeURIComponent(movie.xd)}&lang=${encodeURIComponent(movie.lang)}&res=${encodeURIComponent(movie.res)}&date=${encodeURIComponent(movie.date)}&time=${encodeURIComponent(movie.time)}&poster=${encodeURIComponent(movie.poster)}&rating=${movie.rating}&votes=${movie.votes}&genre=${encodeURIComponent(movie.genre)}&des=${encodeURIComponent(movie.des)}&cast=${cast}&crew=${crew}">
+                                        <div class="card">
+                                            <img src="${movie.poster}" class="card-img" alt="${movie.title}">
+                                            <div class="card-body">
+                                                <ion-icon name="heart-sharp"></ion-icon>
+                                                <p>${movie.rating} &ThinSpace; ${movie.votes} votes</p>
+                                            </div>
+                                        </div>
+                                        <h3 style="color:black">${movie.title}</h3>
+                                        <p class="detail">${movie.genre}</p>
+                                    </a>
+                                `;
+            
+                                cardContainer.appendChild(movieCard);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching the movie data:', error));
+                }
+            
+                // Fetch Telugu and Tamil movies
+                fetchMovies('https://thiruvidhirevanth.github.io/json/TeluguMovies.json', 'telugu-card-container');
+
+            
+            
+            
+            
+                
+            </script>
+            
+
+            
+        </div>
+        <div class="footer">
+            <div style=" display: flex; padding-left: 10%;padding-top: 20px ;padding-bottom: 40px; ">
+                <p style="color: aliceblue; padding-right: 30%;padding-top: 5px;"><b>List your Show </b>    Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow</p>
+                <button style="height: 10%;padding: 8px 10px 8px 10px ; background-color: #ec5e71; color: aliceblue;border-radius: 4px;">Contact Today!</button>
+            </div>
+            <div style="background-color:#333545; ">
+
+               <img src="img/customer.svg" alt="" style="padding-left: 20%;">
+               
+              <img src="img/tickets.svg" alt="" style="padding-left: 20%;">
+              <img src="img/letter.svg" alt="" style="padding-left: 20%;">
+                <div style="display: flex; padding-left: 10% ;padding-top: 8px;font-size: 12px;" >
+                  <p style="padding-left: 10%;color: aliceblue;">24/7 CUSTOMER CARE</p>
+                  <p style="padding-left: 20%;color: aliceblue;">RESEND BOOKING CONFIRMATION</p>
+                  <p style="padding-left: 16%;color: aliceblue;">SUBSCRIBE TO THE NEWSLETTER</p>
+
+
+                </div>
+                
+            </div>
+            <div style="display: flex;padding-top: 30px;padding-left: 2%;padding-right: 2%;">
+              <hr style="width:50%;text-align:left;margin-left:0 ;color:aliceblue;">
+               <img src="img/logo.png" alt="">
+              <hr style="width:50%;text-align:left;margin-left:0 ;color:aliceblue;">
+            </div>
+            <div style="display: flex;padding-top: 15px;padding-left: 42% ;padding-bottom: 30px;">
+                <img src="img/facebook.svg" style="padding-left: 10px;"  alt="">
+                <img src="img/insta.svg"   style="padding-left: 10px;" alt="">
+                <img src="img/youtube.svg"   style="padding-left: 10px;" alt="">
+                <img src="img/x.svg"   style="padding-left: 10px;" alt="">
+                <img src="img/pinterset.svg"   style="padding-left: 10px;" alt="">
+            </div>
+            <div style="display: flex;padding-top: 15px;padding-left: 38% ;padding-bottom: 30px;">
+                <p style="padding-left: 10%;color: aliceblue;font-size: 12px">Copyright@2025 Thiruvidhi Revanth</p>
+               
+            </div>
+        </div>
+        <!-- End content -->
+
+       
+
+    </div>
+   
+
+    
+
+</body>
+
+</html>
