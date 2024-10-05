@@ -77,10 +77,10 @@ Here are a few screenshots of the **BookMyShow Clone** in action:
    ![Homepage Screenshot](https://github.com/ThiruvidhiRevanth/Book-My-Show-Clone/blob/main/img/homescreen.png?raw=true)
 
 2. **Movie Listings**
-   ![Movie Listings Screenshot]()
+   ![Movie Listings Screenshot](https://github.com/ThiruvidhiRevanth/Book-My-Show-Clone/blob/main/img/Movielist.png?raw=true)
 
 3. **Booking Page**
-   ![Booking Page Screenshot](link-to-booking-page-screenshot)
+   ![Booking Page Screenshot](https://github.com/ThiruvidhiRevanth/Book-My-Show-Clone/blob/main/img/book.png?raw=true)
 
 ## 🤝 Contributing
 
